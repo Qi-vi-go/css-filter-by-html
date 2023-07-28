@@ -16,6 +16,7 @@ for (let css_rule of allRules[0]){
         for (let k = 0; k < neighbor_elems.length; k++) {
             ccs_array.push([]);
             neighbor_elems[k] = neighbor_elems[k].replace(/\S+\s\+\s/gm, "");
+            neighbor_elems[k] = neighbor_elems[k].replace(/:not\(\S+\)/gm, "");
             neighbor_elems[k] = neighbor_elems[k].split(" > ");
             for (let i = 0; i < neighbor_elems[k].length; i++) {
                 neighbor_elems[k][i] = neighbor_elems[k][i].split(" ");
